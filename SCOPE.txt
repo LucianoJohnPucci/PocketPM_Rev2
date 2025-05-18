@@ -1,0 +1,64 @@
+# ForesightPM Implementation Prompt
+
+## Project Overview
+Create a project management application called "ForesightPM" that leverages AI to provide proactive task management, dependency analysis, and stakeholder accountability. The app should help project managers identify potential issues before they occur and maintain clear accountability for milestones.
+
+## Core Requirements
+
+### Predictive Task Analysis System
+- Develop an AI model that analyzes existing task parameters (duration, resources, dependencies) to identify potential bottlenecks
+- Implement a risk scoring system for tasks based on complexity, resource constraints, and historical performance data
+- Create an intuitive dashboard highlighting high-risk tasks and suggesting mitigation strategies
+
+### Smart Predecessor Management
+- Build an intelligent dependency tracking system that monitors the status of prerequisite tasks
+- Implement automatic alerts when predecessor tasks are behind schedule or at risk
+- Develop visualization tools showing critical path impacts of delayed predecessor tasks
+- Enable "what-if" scenario planning for task rescheduling
+
+### Stakeholder Accountability Framework
+- Create a customizable notification system that sends reminders to stakeholders at strategic intervals
+- Implement escalation protocols for tasks approaching deadlines without progress
+- Develop stakeholder-specific dashboards showing their tasks, deadlines, and team dependencies
+- Include performance analytics comparing estimated vs. actual completion times
+
+### Budget Impact Analysis
+- Develop an AI model that forecasts budget implications when tasks are delayed or resources change
+- Create visualization tools showing financial impacts of scheduling decisions
+- Implement automatic budget alerts when task changes threaten to exceed allocations
+- Enable scenario planning to optimize resource allocation against budget constraints
+
+### User Experience
+- Design a clean, intuitive interface with customizable views for different user roles
+- Implement natural language processing for task creation and updates
+- Create mobile-responsive design with push notifications
+- Develop voice command capabilities for hands-free updates
+
+## Technical Specifications
+- Build as a responsive web application with companion mobile apps (iOS/Android)
+- Implement secure user authentication with role-based access controls
+- Develop RESTful APIs for integration with existing project management tools
+- Utilize machine learning frameworks to power the predictive analytics features
+- Implement real-time collaboration features using WebSocket technology
+- Create a comprehensive analytics system with customizable reporting
+
+## AI Integration Points
+- Natural language processing for task creation and updates
+- Predictive analytics for identifying potential issues before they occur
+- Intelligent notification scheduling based on user response patterns
+- Automated dependency analysis and critical path calculations
+- Budget forecasting and resource optimization
+- Pattern recognition from historical project data to improve future predictions
+
+## Implementation Timeline
+- Phase 1: Core task management and predecessor tracking system
+- Phase 2: AI-powered risk prediction and notification system
+- Phase 3: Budget impact analysis and resource optimization
+- Phase 4: Advanced reporting, analytics, and third-party integrations
+
+## Success Metrics
+- Reduction in missed deadlines by 30%
+- Decrease in budget overruns by 25%
+- Improvement in resource utilization by 20%
+- Increase in on-time task completion by 40%
+- User adoption rate of 80% within target organizations
