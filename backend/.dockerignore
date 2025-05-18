@@ -1,0 +1,45 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Python virtual environment
+venv/
+.venv/
+ENV/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE and editor files
+.vscode/
+.idea/
+*.project
+*.swp
+*~
+*.bak
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Local logs and databases (if any, beyond what's in .gitignore)
+*.log
+*.sqlite3
+*.sqlite3-journal
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Secrets (should be handled by environment variables or secrets management)
+.env
+.env.*
+! .env.example # If you have an example env file you want to include
