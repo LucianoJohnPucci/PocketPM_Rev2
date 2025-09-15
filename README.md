@@ -1,4 +1,4 @@
-# ForesightPM
+# PocketPM w/TIVd
 
 A modern AI-powered project management application that provides proactive task management, dependency analysis, and stakeholder accountability.
 
