@@ -11,6 +11,7 @@ import {
   Alert,
   TextField,
   InputAdornment,
+  Slider,
   MenuItem,
   Select,
   SelectChangeEvent,
@@ -58,6 +59,10 @@ interface Task {
   actual_hours: number;
   completion_percentage: number;
   risk_score: number;
+  // TIVD metrics for 3D prioritization (0-10 scale)
+  impact: number;
+  effort: number;
+  value: number;
   project_id: number;
   assignee_id: number | null;
   creator_id: number;
@@ -90,6 +95,10 @@ const Tasks: React.FC = () => {
     assignee_id: '',
     search: ''
   });
+  // TIVD slider ranges (inclusive), using 0-10 for all three vectors
+  const [impactRange, setImpactRange] = useState<number[]>([0, 10]);
+  const [effortRange, setEffortRange] = useState<number[]>([0, 10]);
+  const [valueRange, setValueRange] = useState<number[]>([0, 10]);
 
   useEffect(() => {
     // In a real implementation, we would fetch this data from the API
@@ -112,6 +121,9 @@ const Tasks: React.FC = () => {
               actual_hours: 10,
               completion_percentage: 100,
               risk_score: 2.5,
+              impact: 8,
+              effort: 4,
+              value: 9,
               project_id: 1,
               assignee_id: 1,
               creator_id: 1,
@@ -138,6 +150,9 @@ const Tasks: React.FC = () => {
               actual_hours: 8,
               completion_percentage: 50,
               risk_score: 7.8,
+              impact: 9,
+              effort: 7,
+              value: 8,
               project_id: 1,
               assignee_id: 2,
               creator_id: 1,
@@ -164,6 +179,9 @@ const Tasks: React.FC = () => {
               actual_hours: 0,
               completion_percentage: 0,
               risk_score: 4.2,
+              impact: 6,
+              effort: 5,
+              value: 7,
               project_id: 1,
               assignee_id: null,
               creator_id: 1,
@@ -262,6 +280,10 @@ const Tasks: React.FC = () => {
           actual_hours: 0,
           completion_percentage: 0,
           risk_score: Math.random() * 10, // Random risk score for demo
+          // Default TIVD values for new tasks
+          impact: 5,
+          effort: 5,
+          value: 5,
           project_id: Number(values.project_id),
           assignee_id: values.assignee_id ? Number(values.assignee_id) : null,
           creator_id: 1, // Current user ID (hardcoded for demo)
@@ -297,6 +319,10 @@ const Tasks: React.FC = () => {
     if (filters.project_id && task.project_id !== Number(filters.project_id)) return false;
     if (filters.assignee_id && task.assignee_id !== Number(filters.assignee_id)) return false;
     if (filters.search && !task.title.toLowerCase().includes(filters.search.toLowerCase())) return false;
+    // Apply TIVD range filters
+    if (task.impact < impactRange[0] || task.impact > impactRange[1]) return false;
+    if (task.effort < effortRange[0] || task.effort > effortRange[1]) return false;
+    if (task.value < valueRange[0] || task.value > valueRange[1]) return false;
     return true;
   });
 
@@ -376,6 +402,54 @@ const Tasks: React.FC = () => {
 
       {/* Filters */}
       <Card elevation={1} sx={{ mb: 4, p: 2 }}>
+        {/* TIVD Sliders (Impact, Effort, Value) - placed above search */}
+        <Box mb={2}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
+            TriVector Dynamics Filters (Impact • Effort • Value)
+          </Typography>
+          <Box display="flex" flexDirection={{ xs: 'column', md: 'row' }} gap={3}>
+            <Box flex={1}>
+              <Typography variant="caption" color="text.secondary">
+                Impact: {impactRange[0]} - {impactRange[1]}
+              </Typography>
+              <Slider
+                value={impactRange}
+                onChange={(_, v) => setImpactRange(v as number[])}
+                valueLabelDisplay="auto"
+                min={0}
+                max={10}
+                step={1}
+              />
+            </Box>
+            <Box flex={1}>
+              <Typography variant="caption" color="text.secondary">
+                Effort: {effortRange[0]} - {effortRange[1]}
+              </Typography>
+              <Slider
+                value={effortRange}
+                onChange={(_, v) => setEffortRange(v as number[])}
+                valueLabelDisplay="auto"
+                min={0}
+                max={10}
+                step={1}
+              />
+            </Box>
+            <Box flex={1}>
+              <Typography variant="caption" color="text.secondary">
+                Value: {valueRange[0]} - {valueRange[1]}
+              </Typography>
+              <Slider
+                value={valueRange}
+                onChange={(_, v) => setValueRange(v as number[])}
+                valueLabelDisplay="auto"
+                min={0}
+                max={10}
+                step={1}
+              />
+            </Box>
+          </Box>
+        </Box>
+
         <Box display="flex" flexDirection={{ xs: 'column', md: 'row' }} gap={2} alignItems="center">
           <TextField
             name="search"
@@ -495,6 +569,31 @@ const Tasks: React.FC = () => {
             </Select>
           </FormControl>
         </Box>
+      </Card>
+
+      {/* Highlighted WHY notes for end users (education and guidance) */}
+      <Card elevation={0} sx={{ mb: 4, p: 2, backgroundColor: '#fffde7', border: '1px solid #fff59d' }}>
+        <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 1 }}>
+          Why these filters? Understanding TIVD (TriVector Dynamics)
+        </Typography>
+        <Typography variant="body2" sx={{ mb: 1 }}>
+          We help you focus on the most strategic work by balancing three vectors:
+          <strong> Impact</strong> (importance), <strong>Effort</strong> (difficulty), and
+          <strong> Value</strong> (monetary benefit). Aim for high Impact, low Effort, high Value.
+        </Typography>
+        <Typography variant="body2" sx={{ mb: 1 }}>
+          Extra context to refine decisions:
+          Risk Level, Stakeholder Alignment, and Time Sensitivity. Review these regularly and adjust as new
+          information arrives.
+        </Typography>
+        <Typography variant="body2" sx={{ mb: 1 }}>
+          Dependencies matter: map parent/child tasks and sequence your work accordingly. The system can
+          surface blockers and notify you when prioritizing dependent tasks.
+        </Typography>
+        <Typography variant="body2">
+          Feedback loop: revisit priorities frequently. If a task turns out harder or less valuable than
+          expected, re-balance using the sliders and update task details.
+        </Typography>
       </Card>
 
       {filteredTasks.length === 0 ? (
