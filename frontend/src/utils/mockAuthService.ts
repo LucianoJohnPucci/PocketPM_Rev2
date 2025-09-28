@@ -12,9 +12,9 @@ interface StoredUser extends User {
   password: string;
 }
 
-const USERS_STORAGE_KEY = 'foresightpm_users';
-const CURRENT_USER_KEY = 'foresightpm_current_user';
-const TOKEN_KEY = 'foresightpm_token';
+const USERS_STORAGE_KEY = 'pocketpm_users';
+const CURRENT_USER_KEY = 'pocketpm_current_user';
+const TOKEN_KEY = 'pocketpm_token';
 
 // Helper to get users from localStorage
 const getStoredUsers = (): StoredUser[] => {

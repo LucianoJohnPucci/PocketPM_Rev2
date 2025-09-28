@@ -112,7 +112,7 @@ const Tasks: React.FC = () => {
             {
               id: 1,
               title: 'Design database schema',
-              description: 'Create the database schema for the ForesightPM application',
+              description: 'Create the database schema for the PocketPM application',
               status: 'completed',
               priority: 'high',
               start_date: '2025-05-01',
@@ -130,7 +130,7 @@ const Tasks: React.FC = () => {
               created_at: '2025-05-01T00:00:00',
               project: {
                 id: 1,
-                name: 'ForesightPM Development'
+                name: 'PocketPM Development'
               },
               assignee: {
                 id: 1,
@@ -159,7 +159,7 @@ const Tasks: React.FC = () => {
               created_at: '2025-05-01T00:00:00',
               project: {
                 id: 1,
-                name: 'ForesightPM Development'
+                name: 'PocketPM Development'
               },
               assignee: {
                 id: 2,
@@ -188,14 +188,14 @@ const Tasks: React.FC = () => {
               created_at: '2025-05-01T00:00:00',
               project: {
                 id: 1,
-                name: 'ForesightPM Development'
+                name: 'PocketPM Development'
               },
               assignee: null
             }
           ]);
           
           setProjects([
-            { id: 1, name: 'ForesightPM Development' },
+            { id: 1, name: 'PocketPM Development' },
             { id: 2, name: 'Marketing Campaign' }
           ]);
           

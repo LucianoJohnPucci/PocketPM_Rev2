@@ -131,7 +131,7 @@ const Dashboard: React.FC = () => {
             id: 1, 
             title: `Complete API documentation for ${stakeholderId === '1' ? 'John' : stakeholderId === '2' ? 'Sarah' : 'Michael'}`, 
             due_date: '2025-05-20', 
-            project: 'ForesightPM', 
+            project: 'PocketPM', 
             status: 'in_progress',
             priority: 'high',
             dependencies: ['Frontend setup', 'Database design']
@@ -140,7 +140,7 @@ const Dashboard: React.FC = () => {
             id: 2, 
             title: `Review ${stakeholderId === '1' ? 'backend code' : stakeholderId === '2' ? 'UI design' : 'documentation'}`, 
             due_date: '2025-05-18', 
-            project: 'ForesightPM', 
+            project: 'PocketPM', 
             status: 'not_started',
             priority: 'medium',
             dependencies: ['Initial development']
@@ -149,7 +149,7 @@ const Dashboard: React.FC = () => {
             id: 3, 
             title: `Prepare ${stakeholderId === '1' ? 'technical presentation' : stakeholderId === '2' ? 'design assets' : 'project report'}`, 
             due_date: '2025-05-25', 
-            project: 'ForesightPM', 
+            project: 'PocketPM', 
             status: 'not_started',
             priority: 'medium',
             dependencies: []
@@ -158,7 +158,7 @@ const Dashboard: React.FC = () => {
             id: 4, 
             title: `${stakeholderId === '1' ? 'Implement authentication' : stakeholderId === '2' ? 'Create user dashboard' : 'Test deployment pipeline'}`, 
             due_date: '2025-05-15', 
-            project: 'ForesightPM', 
+            project: 'PocketPM', 
             status: 'delayed',
             priority: 'critical',
             dependencies: ['API development', 'Database setup']
@@ -264,12 +264,12 @@ const Dashboard: React.FC = () => {
             totalBudget: 75000,
             allocatedBudget: 14400,
             upcomingDeadlines: [
-              { id: 1, title: 'Complete backend API', due_date: '2025-05-15', project: 'ForesightPM' },
-              { id: 2, title: 'Design dashboard UI', due_date: '2025-05-12', project: 'ForesightPM' },
-              { id: 3, title: 'Implement user authentication', due_date: '2025-05-10', project: 'ForesightPM' }
+              { id: 1, title: 'Complete backend API', due_date: '2025-05-15', project: 'PocketPM' },
+              { id: 2, title: 'Design dashboard UI', due_date: '2025-05-12', project: 'PocketPM' },
+              { id: 3, title: 'Implement user authentication', due_date: '2025-05-10', project: 'PocketPM' }
             ],
             projectProgress: [
-              { id: 1, name: 'ForesightPM Development', totalTasks: 15, completedTasks: 9, completionPercentage: 60, color: '#2196f3' },
+              { id: 1, name: 'PocketPM Development', totalTasks: 15, completedTasks: 9, completionPercentage: 60, color: '#2196f3' },
               { id: 2, name: 'Marketing Campaign', totalTasks: 8, completedTasks: 2, completionPercentage: 25, color: '#ff9800' },
               { id: 3, name: 'Mobile App Development', totalTasks: 12, completedTasks: 6, completionPercentage: 50, color: '#4caf50' },
               { id: 4, name: 'User Research', totalTasks: 6, completedTasks: 6, completionPercentage: 100, color: '#9c27b0' },

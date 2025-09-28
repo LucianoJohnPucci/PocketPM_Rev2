@@ -163,7 +163,7 @@ const Reports: React.FC = () => {
         // Simulate API call delay
         setTimeout(() => {
           const mockProjects = [
-            { id: 1, name: 'ForesightPM Development' },
+            { id: 1, name: 'PocketPM Development' },
             { id: 2, name: 'Marketing Campaign' },
             { id: 3, name: 'Mobile App Development' }
           ];
@@ -172,7 +172,7 @@ const Reports: React.FC = () => {
             {
               id: 1,
               title: 'Design database schema',
-              description: 'Create the database schema for the ForesightPM application',
+              description: 'Create the database schema for the PocketPM application',
               status: 'completed',
               priority: 'high',
               start_date: '2025-05-01',
@@ -187,7 +187,7 @@ const Reports: React.FC = () => {
               created_at: '2025-05-01T00:00:00',
               project: {
                 id: 1,
-                name: 'ForesightPM Development'
+                name: 'PocketPM Development'
               },
               assignee: {
                 id: 1,
@@ -214,7 +214,7 @@ const Reports: React.FC = () => {
               created_at: '2025-05-01T00:00:00',
               project: {
                 id: 1,
-                name: 'ForesightPM Development'
+                name: 'PocketPM Development'
               },
               assignee: {
                 id: 2,
@@ -248,7 +248,7 @@ const Reports: React.FC = () => {
               created_at: '2025-05-01T00:00:00',
               project: {
                 id: 1,
-                name: 'ForesightPM Development'
+                name: 'PocketPM Development'
               },
               assignee: {
                 id: 3,
@@ -282,7 +282,7 @@ const Reports: React.FC = () => {
               created_at: '2025-05-01T00:00:00',
               project: {
                 id: 1,
-                name: 'ForesightPM Development'
+                name: 'PocketPM Development'
               },
               assignee: {
                 id: 2,

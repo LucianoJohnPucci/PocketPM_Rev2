@@ -68,7 +68,7 @@ const Register: React.FC = () => {
           }}
         >
           <Typography component="h1" variant="h4" sx={{ mb: 3 }}>
-            ForesightPM
+            PocketPM
           </Typography>
           <Typography component="h2" variant="h5" sx={{ mb: 2 }}>
             Sign Up

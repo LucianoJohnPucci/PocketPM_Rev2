@@ -6,11 +6,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Settings(BaseSettings):
-    PROJECT_NAME: str = "ForesightPM"
+    PROJECT_NAME: str = "PocketPM"
     API_V1_STR: str = "/api/v1"
     
     # Database settings
-    DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///./foresightpm.db")
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///./pocketpm.db")
     
     # JWT settings
     SECRET_KEY: str = os.getenv("SECRET_KEY", "supersecretkey")

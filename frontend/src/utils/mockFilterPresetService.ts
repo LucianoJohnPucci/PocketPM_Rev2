@@ -3,8 +3,8 @@ import { FilterPreset, TaskFilters } from '../components/resources/TaskFilterBar
 import { v4 as uuidv4 } from 'uuid';
 
 // Local storage key for filter presets
-const FILTER_PRESETS_STORAGE_KEY = 'foresightpm_filter_presets';
-const DEFAULT_PRESET_STORAGE_KEY = 'foresightpm_default_filter_preset';
+const FILTER_PRESETS_STORAGE_KEY = 'pocketpm_filter_presets';
+const DEFAULT_PRESET_STORAGE_KEY = 'pocketpm_default_filter_preset';
 
 // Default presets
 const defaultPresets: FilterPreset[] = [

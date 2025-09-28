@@ -69,8 +69,8 @@ const ProjectDetails: React.FC = () => {
         setTimeout(() => {
           setProject({
             id: 1,
-            name: 'ForesightPM Development',
-            description: 'Development of the ForesightPM application',
+            name: 'PocketPM Development',
+            description: 'Development of the PocketPM application',
             start_date: '2025-05-01',
             end_date: '2025-08-01',
             budget: 50000,

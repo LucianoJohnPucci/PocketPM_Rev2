@@ -1,6 +1,6 @@
-# ForesightPM Frontend
+# PocketPM Frontend
 
-This is the frontend application for ForesightPM, a modern AI-powered project management application that provides proactive task management, dependency analysis, and stakeholder accountability.
+This is the frontend application for PocketPM, a modern AI-powered project management application that provides proactive task management, dependency analysis, and stakeholder accountability.
 
 ## Technology Stack
 

@@ -50,32 +50,59 @@ A modern AI-powered project management application that provides proactive task 
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/foresightpm.git
-cd foresightpm
+git clone https://github.com/yourusername/pocketpm.git
+cd pocketpm
 ```
 
-2. Set up the backend
+2. Set up Python virtual environment
 ```bash
-cd backend
 python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-python app.py
+venv\Scripts\activate  # On Windows
+# or
+source venv/bin/activate  # On macOS/Linux
+pip install -r backend/requirements.txt
 ```
 
-3. Set up the frontend
+### Quick Start (Recommended)
+
+**Option 1: Use the startup scripts**
 ```bash
+# Start both servers
+python start_servers.py
+
+# Or start individually
+python start_backend.py
+python start_frontend.py
+```
+
+**Option 2: Use batch files (Windows)**
+```bash
+# Double-click or run:
+start_backend.bat
+start_frontend.bat
+```
+
+**Option 3: Manual setup**
+```bash
+# Backend (from project root)
+cd backend
+python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+# Frontend (in new terminal)
 cd frontend
-npm install
+npm install --force
 npm start
 ```
 
-4. Access the application at http://localhost:3000
+### Access the Application
+- **Frontend**: http://localhost:3000
+- **Backend API**: http://localhost:8000
+- **API Documentation**: http://localhost:8000/docs
 
 ## Project Structure
 
 ```
-foresightpm/
+pocketpm/
 ├── backend/               # FastAPI backend
 │   ├── app/
 │   │   ├── api/           # API endpoints

@@ -87,8 +87,8 @@ const Projects: React.FC = () => {
           setProjects([
             {
               id: 1,
-              name: 'ForesightPM Development',
-              description: 'Development of the ForesightPM application',
+              name: 'PocketPM Development',
+              description: 'Development of the PocketPM application',
               start_date: '2025-05-01',
               end_date: '2025-08-01',
               budget: 50000,
@@ -107,7 +107,7 @@ const Projects: React.FC = () => {
             {
               id: 2,
               name: 'Marketing Campaign',
-              description: 'Marketing campaign for the ForesightPM launch',
+              description: 'Marketing campaign for the PocketPM launch',
               start_date: '2025-07-01',
               end_date: '2025-09-01',
               budget: 25000,

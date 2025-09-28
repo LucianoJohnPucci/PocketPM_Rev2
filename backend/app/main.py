@@ -12,8 +12,8 @@ from app.db.database import engine, Base
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
-    title="ForesightPM API",
-    description="API for the ForesightPM project management application",
+    title="PocketPM API",
+    description="API for the PocketPM project management application",
     version="0.1.0"
 )
 
@@ -32,7 +32,7 @@ app.include_router(api_router, prefix=settings.API_V1_STR)
 @app.get("/")
 async def root():
     return {
-        "message": "Welcome to ForesightPM API",
+        "message": "Welcome to PocketPM API",
         "version": "0.1.0",
         "status": "online",
         "timestamp": datetime.now().isoformat()
